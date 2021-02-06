@@ -1,22 +1,31 @@
-/**
- * @param {number} capacity
- */
-var LRUCache = function (capacity) {
-	let map = new Map()
+class LRUCache {
+	constructor(capacity) {
+		this.map = new Map()
+		this.capacity = capacity
+	}
+
+	get(key) {
+		let val = this.map.get(key)
+		if (val === undefined) {
+			return -1
+		} else {
+			this.map.delete(key)
+			this.map.set(key, val)
+			// 更新，使其在迭代器中排在首位
+			return val
+		}
+	}
+	put(key, value) {
+		if (this.map.has(key)) {
+			this.map.delete(key)
+		}
+		this.map.set(key, value)
+		if (this.map.size > this.capacity) {
+			// 迭代器按序返回，第一个就是最久的那一个(value:[key,value])
+			this.map.delete(this.map.entries().next().value[0])
+		}
+	}
 }
-
-/**
- * @param {number} key
- * @return {number}
- */
-LRUCache.prototype.get = function (key) {}
-
-/**
- * @param {number} key
- * @param {number} value
- * @return {void}
- */
-LRUCache.prototype.put = function (key, value) {}
 
 /**
  * Your LRUCache object will be instantiated and called as such:
