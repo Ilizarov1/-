@@ -13,7 +13,7 @@ class Solution:
         for i in range(1, n+1):
             sum[i] = sum[i-1]+nums[i-1]
         l, r = 0, n
-        # 二分，目标是len
+        # 二分，目标是len，子数组长度
         while l < r:
             mid = math.floor((l+r+1)/2)
             if self.check(mid, sum, k, n, nums):
