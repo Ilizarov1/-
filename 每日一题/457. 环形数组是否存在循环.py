@@ -3,6 +3,7 @@ from typing import List
 
 
 class Solution:
+    # 快慢指针
     def circularArrayLoop(self, nums: List[int]) -> bool:
         def next_step(i: int, length: int):
             return (i+nums[i]+length) % length
