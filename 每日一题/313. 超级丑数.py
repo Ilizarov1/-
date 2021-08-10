@@ -19,7 +19,7 @@ class Solution:
             # i: 由primes[i]构造的序列
             # idx: 丑数下标, val = primes[i] * ans[idx]
             val, i, idx = q.get()
-            # 加入答案
+            # 加入答案, 由于序列单调，简单判断不同即可
             if val != ans[j-1]:
                 ans.append(val)
                 j += 1
