@@ -1,6 +1,8 @@
 # https://leetcode-cn.com/problems/arithmetic-slices/
 from typing import List
 
+# 双指针
+
 
 class Solution:
     def numberOfArithmeticSlices(self, nums: List[int]) -> int:
