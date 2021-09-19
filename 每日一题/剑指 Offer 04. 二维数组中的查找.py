@@ -3,6 +3,7 @@ from typing import List
 
 
 class Solution:
+
     def findNumberIn2DArray(self, matrix: List[List[int]], target: int) -> bool:
         if not matrix:
             return False
