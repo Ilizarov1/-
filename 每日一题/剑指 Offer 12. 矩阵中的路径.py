@@ -1,5 +1,6 @@
 # https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/
 from typing import List
+from functools import lru_cache
 
 
 class Solution:
@@ -8,6 +9,7 @@ class Solution:
         m, n = len(board), len(board[0])
         visited = [[False for i in range(n)] for i in range(m)]
 
+        @lru_cache(None)
         def dfs(i: int, j: int, s: int):
             if s < len(word) and i < m and i >= 0 and j < n and j >= 0 and not visited[i][j]:
                 visited[i][j] = True
