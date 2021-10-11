@@ -1,0 +1,19 @@
+# https://leetcode-cn.com/problems/zhan-de-ya-ru-dan-chu-xu-lie-lcof/
+from typing import List
+
+
+class Solution:
+    def validateStackSequences(self, pushed: List[int], popped: List[int]) -> bool:
+        stack = []
+        i = 0
+        for num in pushed:
+            stack.append(num)
+            while len(stack) != 0 and stack[len(stack)-1] == popped[i]:
+                stack.pop()
+                i += 1
+
+        return True if len(stack) == 0 else False
+
+
+x = Solution()
+print(x.validateStackSequences([1, 2, 3, 4, 5], [4, 5, 3, 2, 1]))
