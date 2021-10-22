@@ -9,7 +9,7 @@ class Solution:
                 return True
             root = postorder[r]
             m = r-1
-            while(postorder[m] >= root):
+            while m >= 0 and postorder[m] >= root:
                 m -= 1
             # [l,m] 左子树
             # [m+1,r-1] 右子树
