@@ -18,8 +18,6 @@ class Solution:
             if not cur:
                 return
             rest -= cur.val
-            if rest < 0:
-                return
             tmp.append(cur.val)
             if rest == 0 and not cur.left and not cur.right:
                 ans.append(tmp)
