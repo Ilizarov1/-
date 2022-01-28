@@ -10,7 +10,6 @@ class Solution:
         if size == 0:
             return []
 
-        @functools.lru_cache(None)
         def dfs(begin, target, path):
             if target < 0:
                 return
