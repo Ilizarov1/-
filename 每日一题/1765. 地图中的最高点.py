@@ -18,11 +18,11 @@ class Solution:
         dirs = [(1, 0), (0, 1), (-1, 0), (0, -1)]
         while q:
             d = len(q)
-            for _ in range(q):
+            for _ in range(d):
                 x, y = q.popleft()
                 for dir in dirs:
                     nx, ny = x+dir[0], y+dir[1]
-                    if 0 <= nx < m and 0 <= ny < n and isWater[nx][ny] == 0:
+                    if 0 <= nx < m and 0 <= ny < n and ret[nx][ny] == -1:
                         ret[nx][ny] = h
                         q.append((nx, ny))
             h += 1
