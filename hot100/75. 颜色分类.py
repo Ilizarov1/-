@@ -20,4 +20,4 @@ class Solution:
 
 
 x = Solution()
-print(x.sortColors([2, 0, 2, 1, 1, 0]))
+print(x.sortColors([2, 0, 2, 1, 1, 0], 1))
