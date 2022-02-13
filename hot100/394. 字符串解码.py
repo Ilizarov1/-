@@ -14,3 +14,10 @@ class Solution:
             if i >= 'a' and i <= 'z':
                 ret += i
         return ret
+
+# initial:
+#   想到了栈，想到了括号匹配
+# something wrong:
+#   倍数处理有问题，结果拼接处理有问题
+# something better:
+#   [current_multi, last_ret] in stack
