@@ -3,6 +3,7 @@ from typing import List
 
 
 class Solution:
+    # 左括号一定大于等于有括号才合法
     def generateParenthesis(self, n: int) -> List[str]:
         ret = []
 
