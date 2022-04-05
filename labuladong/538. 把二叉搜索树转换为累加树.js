@@ -25,4 +25,5 @@ var convertBST = function (root) {
         root.val = sum;
         traverse(root.left);
     })(root);
+    return root;
 };
