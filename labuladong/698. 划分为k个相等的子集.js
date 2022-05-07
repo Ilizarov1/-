@@ -22,7 +22,7 @@ var canPartitionKSubsets = function (nums, k) {
         // 退出情况
         // used === (1 << nums.length) - 1
         // 会被格式化成 used === 1 << (nums.length - 1)
-        if (k === 0 && used === allUsed) {
+        if (k === 0 && used === (1 << nums.length) - 1) {
             return true;
         }
         if (k === 0) {
@@ -66,3 +66,9 @@ var canPartitionKSubsets = function (nums, k) {
 };
 
 console.log(canPartitionKSubsets([4, 3, 2, 3, 5, 2, 1], 4));
+
+var b = 2;
+(function b() {
+    b = 4;
+    console.log(b);
+})();
