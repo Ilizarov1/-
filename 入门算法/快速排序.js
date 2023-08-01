@@ -20,6 +20,25 @@ function quickSort(arr = []) {
     }
     quick(0, arr.length - 1);
 }
-const arr = [2, 5, 11, 9];
-quickSort(arr);
-console.log(arr);
+
+function quickSort2(arr = [], begin = 0, end = 0) {
+    if (begin >= end) {
+        return;
+    }
+    const tmp = arr[begin];
+    let i = begin,
+        j = end;
+    while (i < j) {
+        while (arr[j] >= tmp && i < j) j--;
+        arr[i] = arr[j];
+        while (arr[i] <= tmp && i < j) i++;
+        arr[j] = arr[i];
+    }
+    arr[i] = tmp;
+    quickSort2(arr, begin, i - 1);
+    quickSort2(arr, i + 1, end);
+
+    return arr;
+}
+
+console.log(quickSort2([5, 4, 3, 2, 1], 0, 4));

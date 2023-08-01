@@ -1,8 +1,10 @@
 const class2type = {};
 
-'Boolean Number String Function Array Date RegExp Object Error'.split(' ').map((item, index) => {
-    class2type[`[object ${item}]`] = item.toLowerCase();
-});
+'Boolean Number String Function Array Date RegExp Object Error Map Set'
+    .split(' ')
+    .map((item, index) => {
+        class2type[`[object ${item}]`] = item.toLowerCase();
+    });
 
 function getType(obj: any) {
     if (obj == null) {
@@ -14,4 +16,4 @@ function getType(obj: any) {
         : typeof obj;
 }
 
-console.log(getType(undefined));
+console.log(getType(new Set()));
