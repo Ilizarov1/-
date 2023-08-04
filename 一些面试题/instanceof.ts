@@ -11,6 +11,14 @@ function myInstanceof(left: Object, right: Function) {
         proto = Object.getPrototypeOf(proto);
     }
 }
+
+function myNew(constructor: Function, ...args) {
+    const obj = Object.create(constructor.prototype);
+    const result = Object.apply(obj, args);
+
+    return typeof result === 'object' ? result : obj;
+}
+
 function Car(make, model, year) {
     this.make = make;
     this.model = model;

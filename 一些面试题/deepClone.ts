@@ -20,6 +20,9 @@ function deepClone(obj: any, depth = Infinity, objstack: Array<any>) {
             typeof o === 'object' ? deepClone(o, depth - 1, [...objstack, o]) : o
         );
     }
+    if (obj instanceof RegExp) {
+        return new RegExp(obj.source, obj.flags);
+    }
 
     // 快速浅拷贝
     const copy = Object.assign({}, obj);

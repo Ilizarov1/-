@@ -16,4 +16,4 @@ function getType(obj: any) {
         : typeof obj;
 }
 
-console.log(getType(new Set()));
+console.log(typeof null);
