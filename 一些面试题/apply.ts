@@ -25,3 +25,18 @@ Function.prototype['myBind'] = function (context, ...args) {
         return self.apply(context, [...args, ...newArgs]);
     };
 };
+
+const myBind = function (fn, context, ...args) {
+    return function tmpFn(...newArgs) {
+        if (this instanceof tmpFn) {
+            return new fn(...args, ...newArgs);
+        }
+        return fn.apply(context, [...args, ...newArgs]);
+    };
+};
+
+const test = function (a) {
+    this.a = a;
+};
+
+const test1 = myBind(test, { a: 2 });
