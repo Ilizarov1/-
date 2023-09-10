@@ -15,5 +15,3 @@ function getType(obj: any) {
         ? class2type[Object.prototype.toString.call(obj)] || 'object'
         : typeof obj;
 }
-
-console.log(typeof null);

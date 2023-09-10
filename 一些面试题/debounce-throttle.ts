@@ -13,10 +13,22 @@ function throttle(fn: Function, duration: number) {
     };
 }
 
+function throttle2(fn: Function, duration: number) {
+    let timer: number;
+    return function (...args) {
+        if (!timer) {
+            timer = setTimeout(() => {
+                fn.apply(this, ...args);
+                clearTimeout(timer);
+            }, duration);
+        }
+    };
+}
+
 // 防抖
 // 短时间内多次触发，只触发最后一次
 function debounce(fn: Function, delay: number) {
-    let timer = null;
+    let timer: number;
 
     return function (...args) {
         if (!timer) clearTimeout(timer);
