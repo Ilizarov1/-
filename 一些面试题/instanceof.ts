@@ -14,7 +14,7 @@ function myInstanceof(left: Object, right: Function) {
 
 function myNew(constructor: Function, ...args) {
     const obj = Object.create(constructor.prototype);
-    const result = Object.apply(obj, args);
+    const result = constructor.apply(obj, args);
 
     return typeof result === 'object' ? result : obj;
 }

@@ -28,7 +28,7 @@ Function.prototype['myBind'] = function (context, ...args) {
 
 const myBind = function (fn, context, ...args) {
     return function tmpFn(...newArgs) {
-        if (this instanceof tmpFn) {
+        if (new.target === tmpFn) {
             return new fn(...args, ...newArgs);
         }
         return fn.apply(context, [...args, ...newArgs]);
