@@ -38,5 +38,3 @@ const myBind = function (fn, context, ...args) {
 const test = function (a) {
     this.a = a;
 };
-
-const test1 = myBind(test, { a: 2 });
