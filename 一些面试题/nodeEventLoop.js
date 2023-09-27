@@ -1,3 +1,4 @@
+console.log('start');
 process.nextTick(() => {
     console.log(1);
 });
@@ -10,3 +11,4 @@ Promise.resolve().then(() => {
 setImmediate(() => {
     console.log(4);
 });
+console.log('end');
